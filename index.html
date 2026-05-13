@@ -812,7 +812,7 @@ When <span class="math-symbol" style="white-space: nowrap;">q > 1</span>, the nu
 <div class="exercise-section" style="border-top: none; margin-top: 0; padding-top: 0;">
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 1: A New Variant Appears </strong>
+<strong style="white-space: nowrap;">Question 1: A New Variant Appears (Short Answer)</strong>
 <p>Assume a new variant appears with <strong>5 initial infected people</strong> in the first cycle (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 5</span>). Because no prevention is taken yet, each infected person spreads the virus to 4 others in the next cycle (Infection rate <span class="math-symbol" style="white-space: nowrap;">q = 4</span>). </p>
 <div style="margin-top: 10px;">
 How many <strong>new infected people</strong> will be recorded exactly in the 5th infection cycle (<span class="math-symbol" style="white-space: nowrap;">u<sub>5</sub></span>)?<br><br>
@@ -821,8 +821,8 @@ How many <strong>new infected people</strong> will be recorded exactly in the 5t
 </div>
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 2</strong> 
-<p>An outbreak starts from <strong>2 "Patient Zeros"</strong> (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 2</span>). The infection rate is <span class="math-symbol" style="white-space: nowrap;">q = 3</span>. Calculate the <strong>number of infected people exactly at cycle 7 (<span class="math-symbol" style="white-space: nowrap;">u<sub>7</sub></span>)</strong>.</p>
+<strong style="white-space: nowrap;">Question 2: Number of Infected people at Cycle 7 (Multiple Choice)</strong>
+<p>An outbreak starts from <strong>2 "Patient Zeros"</strong> (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 2</span>). The infection rate is <span class="math-symbol" style="white-space: nowrap;">q = 3</span>. Calculate the <strong>number of infected cases exactly at cycle 7 (<span class="math-symbol" style="white-space: nowrap;">u<sub>7</sub></span>)</strong>.</p>
 <div style="margin-top: 10px;">
 <label class="radio-option"><input type="radio" name="t3_q2" value="A"> A. 1458</label>
 <label class="radio-option"><input type="radio" name="t3_q2" value="B"> B. 486</label>
@@ -832,7 +832,7 @@ How many <strong>new infected people</strong> will be recorded exactly in the 5t
 </div>
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 3</strong> 
+<strong style="white-space: nowrap;">Question 3: Total Infected people after Cycle 8 (Short Answer)</strong>
 <p>Using the same data from Question 2 (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 2</span>, <span class="math-symbol" style="white-space: nowrap;">q = 3</span>). Calculate the <strong>total number of infected people after cycle 8 (<span class="math-symbol" style="white-space: nowrap;">S<sub>8</sub></span>)</strong>.</p>
 <div style="margin-top: 10px;">
 <span class="math-symbol" style="white-space: nowrap;">S<sub>8</sub></span> = <input type="number" class="fill-blank" id="t3_q3" placeholder="Number"> infected people.
@@ -840,7 +840,7 @@ How many <strong>new infected people</strong> will be recorded exactly in the 5t
 </div>
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 4: Effectiveness of Prevention </strong>
+<strong style="white-space: nowrap;">Question 4: Effectiveness of Prevention (Drag and Drop)</strong>
 <p>Thanks to vaccination and 5K, the infection rate dropped to <strong><span class="math-symbol" style="white-space: nowrap;">q = 0.5</span></strong>. This means the number of new infected people this week is only half of last week's. </p>
 <p>Given that the first week recorded <span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 16000</span> new infected people. Drag the appropriate numbers into the blank boxes to forecast the new infected people for the 8 cycles.</p>
 
@@ -1812,7 +1812,7 @@ const reportHTML = `<!DOCTYPE html>
     </div>
     <div class="q-block">
       <span class="q-title">Question 2: Number of Infections at Cycle 7 (Multiple Choice)</span>
-      <p class="question-text">An outbreak starts from 2 "patient zeros" (<span class="math-symbol">u₁ = 2</span>). The infection rate is <span class="math-symbol">q = 3</span>. Calculate the number of infected cases exactly at cycle 7 (u₇).</p>
+      <p class="question-text">An outbreak starts from 2 "Patient Zeros" (<span class="math-symbol">u₁ = 2</span>). The infection rate is <span class="math-symbol">q = 3</span>. Calculate the number of infected cases exactly at cycle 7 (u₇).</p>
       <div class="answer">Student's answer: <b>${q2_val}</b></div>
     </div>
     <div class="q-block">
@@ -1869,7 +1869,7 @@ function downloadReport() {
   const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = \`PandemicExplorer_Report_\${safeName}.html\`;
+  a.download = \`PandemicExplorer_Report_${safeName}.html\`;
   a.click();
 }
 <\/script>
@@ -1902,34 +1902,26 @@ fileNameDisplay.innerHTML = '';
 
 function submitNipahWorksheet() {
 const fileInput = document.getElementById('worksheetUpload');
-const resDiv = document.getElementById('nipahSubmitStatus');
+const statusDiv = document.getElementById('nipahSubmitStatus');
 
 if (!fileInput.files || fileInput.files.length === 0) {
-resDiv.style.display = 'block'; 
-resDiv.className = 'inline-alert alert-error';
-resDiv.style.backgroundColor = '#fee2e2'; 
-resDiv.style.color = '#991b1b';
-resDiv.innerHTML = `❌ Vui lòng tải lên worksheet của bạn trước khi Submit!`;
+alert("Vui lòng tải lên worksheet của bạn trước khi Submit!");
 return;
 }
 
 const file = fileInput.files[0];
 const reader = new FileReader();
 
-resDiv.style.display = 'block'; 
-resDiv.className = 'inline-alert'; 
-resDiv.style.backgroundColor = '#fef3c7'; 
-resDiv.style.color = '#b45309';
-resDiv.innerHTML = `⏳ Processing and uploading file...`;
+statusDiv.style.display = 'block';
+statusDiv.style.color = '#0284c7';
+statusDiv.innerText = "⏳ Đang gửi file lên hệ thống...";
 
 reader.onload = function(e) {
 const fullDataUrl = e.target.result;
 logAction('Submit Nipah Worksheet', 'Uploaded file', null, fullDataUrl, file.name);
 
-resDiv.className = 'inline-alert alert-success';
-resDiv.style.backgroundColor = '#dcfce7'; 
-resDiv.style.color = '#166534';
-resDiv.innerHTML = `✅ File "<b>${file.name}</b>" submitted successfully!`;
+statusDiv.style.color = '#10b981';
+statusDiv.innerText = "✅ Submission successful!";
 state.tabsDone.t5 = true;
 document.querySelector('[data-tab="tab5"]').classList.add('completed');
 };
@@ -1985,27 +1977,81 @@ document.getElementById('chatWindow').style.display = 'flex';
 function callGeminiAPI(prompt, systemInstruction) {
 return new Promise(resolve => {
 setTimeout(() => {
+const currentTab = state.currentTab;
 const lowerPrompt = prompt.toLowerCase();
 let reply = "";
-if (lowerPrompt.includes("scenario") || lowerPrompt.includes("situation") || lowerPrompt.includes("generate")) {
-const scenarios = [
-`{ "text": "During a closed meeting, 1 Patient Zero infects 2 other people every 30 minutes. Calculate the total number of infections after 2 hours (4 cycles)." }`,
-`{ "text": "At a supermarket, the Omicron variant has a transmission rate of q=5. Starting from 2 initial cases, how many people will be infected after 3 cycles?" }`,
-`{ "text": "An outbreak in an industrial zone: The initial Patient Zero is 1 person, infecting 3 others each day. Calculate the total cases after 1 working week." }`
-];
-reply = scenarios[Math.floor(Math.random() * scenarios.length)];
-} else {
-const chatResponses = [
-"🤖 Dr. GeoBot: **R0 (Basic Reproduction Number)** is the average number of people one infected person will pass the virus to. If R0 > 1, the disease will spread exponentially!",
-"🤖 Dr. GeoBot: **Herd Immunity** is achieved when enough people have antibodies (either from vaccines or previous infections), leaving the virus with no one to infect (breaking the sequence).",
-"🤖 Dr. GeoBot: Math is incredibly important! The formula **S_n** helps epidemiologists predict the number of hospital beds required for the future.",
-"🤖 Dr. GeoBot: Did you know? **Vaccines** help convert a rapidly increasing geometric sequence (outbreak) into a decreasing geometric sequence to zero (eradication)! 📉"
-];
-if(lowerPrompt.includes("r0") || lowerPrompt.includes("rate")) reply = chatResponses[0];
-else if(lowerPrompt.includes("immunity") || lowerPrompt.includes("herd")) reply = chatResponses[1];
-else if(lowerPrompt.includes("vaccine")) reply = chatResponses[3];
-else reply = chatResponses[Math.floor(Math.random() * chatResponses.length)];
+
+const hasKeyword = (keywords) => keywords.some(kw => lowerPrompt.includes(kw.toLowerCase()));
+
+// 1. Nhóm câu hỏi "Another questions"
+if (hasKeyword(["show me the right answer", "show right answer", "đáp án"])) {
+    reply = "🤖 Dr. GeoBot: Hehe, wait for your teacher.";
 }
+// 2. Nhóm câu hỏi "General information about pandemic"
+else if (hasKeyword(["infection rate", "hệ số lây nhiễm", "r0"])) {
+    reply = "🤖 Dr. GeoBot: In actual epidemiology, the ratio q we use in our geometric sequence is called the Basic reproduction number (R0).\nIf R0 > 1: The outbreak is expanding.\nIf R0 = 1: The disease is stable.\nIf R0 < 1: The disease is shrinking and will eventually stop.";
+}
+else if (hasKeyword(["f0", "patient zero", "bệnh nhân số 0"])) {
+    reply = "🤖 Dr. GeoBot: F0 (patient zero or the initial infected people) is exactly what u_1 represents in our geometric sequence formula. This is the first person to bring a virus into a community. In real life, successfully tracking down Patient Zero (u_1) allows authorities to quickly isolate them and break the chain of infection (reducing q to 0) before the virus can multiply in the next cycle.";
+}
+else if (hasKeyword(["covid 19", "covid-19", "dịch bệnh", "pandemic"])) {
+    reply = "🤖 Dr. GeoBot: A pandemic, such as COVID-19, clearly illustrates the geometric sequences in real life. COVID-19 spreads through the air with a very high basic reproduction number (R0 or q), especially in newer variants. Without pandemic control measures (like 5K protocols or vaccines), the number of newly infected cases (u_n) will explode uncontrollably in subsequent cycles.";
+}
+else if (hasKeyword(["virus", "vi rút"])) {
+    reply = "🤖 Dr. GeoBot: A virus cannot reproduce on its own; it must invade host cells to multiply. In our \"Pandemic Fighter\" Math model, when a virus starts spreading in a community, it always begins with \"Patient Zero\" (corresponding to the value u_1). Whether the virus turns into a massive outbreak or gets contained depends entirely on how well we control the infection rate q.";
+}
+else if (hasKeyword(["nipah"])) {
+    reply = "🤖 Dr. GeoBot: The Nipah virus is a zoonotic virus transmitted from animals (like fruit bats or pigs) to humans, which has caused severe outbreaks in regions such as West Bengal, India. Although Nipah's infection rate doesn't spread as rapidly as COVID-19 (in practical scenarios, we often assume one person infects two others, meaning q = 2), it is exceptionally dangerous due to a very high mortality rate. Using Math to forecast Nipah cases helps public health officials establish emergency containment zones.";
+}
+// 3. Phân nhánh câu trả lời theo từng Tab
+else if (currentTab === 'tab1') {
+    if (hasKeyword(["destroy", "destroyed", "die", "dead", "replication factor", "rate", "negative", "minus"])) {
+        reply = "🤖 Dr. GeoBot: In our mathematical model, we assume the old virus is 'destroyed' to represent the concept of cell division. The 'replication factor' (q) is our constant multiplier: it tells us exactly how many new viruses are produced by a single virus during one cycle. Also, since we are counting physical viruses, we only use positive integers!";
+    } else if (hasKeyword(["question 3", "question 4", "câu 3", "câu 4"])) {
+        reply = "🤖 Dr. GeoBot: If the ratio between consecutive cycles is always equal, you have found the 'common ratio' (q)! In a geometric sequence, each term is the 'product' of the immediately preceding term and this common ratio. Use multiplication (*) to express the relationship between them.";
+    } else if (hasKeyword(["question 5", "question 6", "câu 5", "câu 6"])) {
+        reply = "🤖 Dr. GeoBot: Look closely at the cycle number (n) and the exponent of q. If Cycle 2 uses q^1, and Cycle 3 uses q^2, the exponent is always smaller than the index by exactly 1! Therefore, the general formula must use the power of (n-1).";
+    } else {
+        reply = "🤖 Dr. GeoBot: I cannot process that question. Try to ask another question or ask your teacher for more information.";
+    }
+}
+else if (currentTab === 'tab2') {
+    if (hasKeyword(["how to answer question 1?", "câu hỏi 1"])) {
+        reply = "🤖 Dr. GeoBot: Question 1 asks “Question 1: At the fifth cycle, how many infected people in total are there in the city?”, which means the total number of infected people at Cycle 5. So you what you need to do is:\nStep 1: Simulate the problem with F0 = 5, R0 = 2 and the infection cycle is 5.\nStep 2: Observe the simulated graph about the “forecast result”.\nStep 3: Move your mouse to see the total number of infected people at Cycle 5 (S5).";
+    } else if (hasKeyword(["difference", "question 2", "khác biệt"])) {
+        reply = "🤖 Dr. GeoBot: It is the subtraction between the total number of infected people at Cycle 1 and Cycle 2.";
+    } else if (hasKeyword(["why is question 2", "new infected people"])) {
+        reply = "🤖 Dr. GeoBot: Because the number you see at Cycle 1 and Cycle 2 represent the total number of infected people at Cycle 1 and Cycle 2. Then the difference between 2 Cycle must be the new infected people after an infection from Cycle 1 to Cycle 2.";
+    } else {
+        reply = "🤖 Dr. GeoBot: I cannot process that question. Try to ask another question or ask your teacher for more information.";
+    }
+}
+else if (currentTab === 'tab3') {
+    if (hasKeyword(["q=0.5", "q = 0.5", "q < 1", "số thập phân", "thập phân", "câu 4", "decimal", "question 4"])) {
+        reply = "🤖 Dr. GeoBot: Great question! Of course, you can't infect \"half a person\". It means: if 100 people are sick this week, strict distancing means they only infect 50 new people next week. When q is less than 1, the epidemic curve is dropping!";
+    } else if (hasKeyword(["u_n", "s_n", "un", "sn", "khác nhau", "phân biệt", "tổng số", "ca mới", "difference", "distinguish", "total", "new infected"])) {
+        reply = "🤖 Dr. GeoBot: Hello! Use u_n when calculating the new infected people in one specific cycle (like Questions 1 and 2). Use S_n when you need the total infected people after n cycles (like Question 3).";
+    } else if (hasKeyword(["5k", "vắc xin", "khẩu trang", "rửa tay", "phòng chống", "giảm u_1", "giảm q", "vaccine", "mask", "wash hands", "prevention", "reduce u_1", "reduce q"])) {
+        reply = "🤖 Dr. GeoBot: These measures don't change the initial infected people (u_1). Instead, they reduce the common ratio q. That is, this reduces the number of people infected after each cycle and keeps the epidemic under control.";
+    } else {
+        reply = "🤖 Dr. GeoBot: I cannot process that question. Try to ask another question or ask your teacher for more information.";
+    }
+}
+else if (currentTab === 'tab5') {
+    if (hasKeyword(["câu 1", "cấp số nhân", "giải thích", "question 1", "geometric sequence", "explain"])) {
+        reply = "🤖 Dr. GeoBot: We obtain that every one infected person will infect two others. This means the number of new cases in the next cycle is always equal to the current cycle multiplied by a constant factor. When a sequence is formed by multiplying the previous term by a constant, that is the exact definition of a geometric sequence!";
+    } else if (hasKeyword(["câu 2", "question 2", "q", "r0"])) {
+        reply = "🤖 Dr. GeoBot: Initially, there is 1 infected person, so the first term u_1 = 1. The problem states one person infects two others, meaning the new cases double each cycle. Therefore, the common ratio q is 2 (not 3!).";
+    } else if (hasKeyword(["câu 4", "suy nghĩ", "kinh nghiệm", "question 4", "thoughts", "experience"])) {
+        reply = "🤖 Dr. GeoBot: There is no absolute right or wrong answer for this question! You can draw upon your experiences from past events like the COVID-19 pandemic. Nipah has an overwhelmingly high fatality rate (40-75%) and no specific vaccines. Even though a ratio of q=2 might not spread as explosively as some COVID variants, with such high mortality, how critical is it to implement isolation right from the earliest cycles? Write down your perspective.";
+    } else {
+        reply = "🤖 Dr. GeoBot: I cannot process that question. Try to ask another question or ask your teacher for more information.";
+    }
+}
+else {
+    reply = "🤖 Dr. GeoBot: I cannot process that question. Try to ask another question or ask your teacher for more information.";
+}
+
 resolve(reply);
 }, 1000);
 });
