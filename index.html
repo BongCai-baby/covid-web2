@@ -805,22 +805,22 @@ Complete Part 2 →
 <h2>🛡️ Prevention (5K) & Control Exercises</h2>
 <p style="color:#64748b; margin-bottom: 20px; line-height: 1.6;">
 Applying the 5K measures and Vaccines helps reduce the infection rate (<span class="math-symbol" style="white-space: nowrap;">q</span>).
-When <span class="math-symbol" style="white-space: nowrap;">q > 1</span>, the infections spread exponentially. But when we control it so <span class="math-symbol" style="white-space: nowrap;">q < 1</span>, the new infections decrease over time, forming a decreasing geometric sequence. Let's practice what you've learned!
+When <span class="math-symbol" style="white-space: nowrap;">q > 1</span>, the number of infected people increase significantly. But when we control it so <span class="math-symbol" style="white-space: nowrap;">q < 1</span>, the new infected people decrease over time, forming a decreasing geometric sequence. Let's practice what you've learned!
 </p>
 
 <div class="exercise-section" style="border-top: none; margin-top: 0; padding-top: 0;">
 
 <div class="exercise-item">
 <strong style="white-space: nowrap;">Question 1: A New Variant Appears (Short Answer)</strong>
-<p>Assume a new variant appears with <strong>5 initial infections</strong> in the first cycle (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 5</span>). Because no prevention is taken yet, each infected person spreads the virus to 4 others in the next cycle (Infection rate <span class="math-symbol" style="white-space: nowrap;">q = 4</span>). </p>
+<p>Assume a new variant appears with <strong>5 initial infected people</strong> in the first cycle (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 5</span>). Because no prevention is taken yet, each infected person spreads the virus to 4 others in the next cycle (Infection rate <span class="math-symbol" style="white-space: nowrap;">q = 4</span>). </p>
 <div style="margin-top: 10px;">
-How many <strong>new infections</strong> will be recorded exactly in the 5th infection cycle (<span class="math-symbol" style="white-space: nowrap;">u<sub>5</sub></span>)?<br><br>
-<span class="math-symbol" style="white-space: nowrap;">u<sub>5</sub></span> = <input type="number" class="fill-blank" id="t3_q1" placeholder="Number"> infections.
+How many <strong>new infected people</strong> will be recorded exactly in the 5th infection cycle (<span class="math-symbol" style="white-space: nowrap;">u<sub>5</sub></span>)?<br><br>
+<span class="math-symbol" style="white-space: nowrap;">u<sub>5</sub></span> = <input type="number" class="fill-blank" id="t3_q1" placeholder="Number"> infected people.
 </div>
 </div>
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 2: Number of Infections at Cycle 7 (Multiple Choice)</strong>
+<strong style="white-space: nowrap;">Question 2: Number of Infected people at Cycle 7 (Multiple Choice)</strong>
 <p>An outbreak starts from <strong>2 "Patient Zeros"</strong> (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 2</span>). The infection rate is <span class="math-symbol" style="white-space: nowrap;">q = 3</span>. Calculate the <strong>number of infected cases exactly at cycle 7 (<span class="math-symbol" style="white-space: nowrap;">u<sub>7</sub></span>)</strong>.</p>
 <div style="margin-top: 10px;">
 <label class="radio-option"><input type="radio" name="t3_q2" value="A"> A. 1458</label>
@@ -831,17 +831,17 @@ How many <strong>new infections</strong> will be recorded exactly in the 5th inf
 </div>
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 3: Total Infections after Cycle 8 (Short Answer)</strong>
+<strong style="white-space: nowrap;">Question 3: Total Infected people after Cycle 8 (Short Answer)</strong>
 <p>Using the same data from Question 2 (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 2</span>, <span class="math-symbol" style="white-space: nowrap;">q = 3</span>). Calculate the <strong>total number of infected people after cycle 8 (<span class="math-symbol" style="white-space: nowrap;">S<sub>8</sub></span>)</strong>.</p>
 <div style="margin-top: 10px;">
-<span class="math-symbol" style="white-space: nowrap;">S<sub>8</sub></span> = <input type="number" class="fill-blank" id="t3_q3" placeholder="Number"> infections.
+<span class="math-symbol" style="white-space: nowrap;">S<sub>8</sub></span> = <input type="number" class="fill-blank" id="t3_q3" placeholder="Number"> infected people.
 </div>
 </div>
 
 <div class="exercise-item">
 <strong style="white-space: nowrap;">Question 4: Effectiveness of Prevention (Drag and Drop)</strong>
-<p>Thanks to vaccination and 5K, the infection rate dropped to <strong><span class="math-symbol" style="white-space: nowrap;">q = 0.5</span></strong>. This means the number of new infections this week is only half of last week's. </p>
-<p>Given that the first week recorded <span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 16000</span> new infections. Drag the appropriate numbers into the blank boxes to forecast the new infections for the 8 cycles.</p>
+<p>Thanks to vaccination and 5K, the infection rate dropped to <strong><span class="math-symbol" style="white-space: nowrap;">q = 0.5</span></strong>. This means the number of new infected people this week is only half of last week's. </p>
+<p>Given that the first week recorded <span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 16000</span> new infected people. Drag the appropriate numbers into the blank boxes to forecast the new infected people for the 8 cycles.</p>
 
 <div class="drag-container">
 <span style="color:#64748b; font-weight:bold; margin-right: 10px; line-height:35px;">Drag these values:</span>
@@ -879,7 +879,7 @@ How many <strong>new infections</strong> will be recorded exactly in the 5th inf
 <div id="phase2_section" style="display: none; animation: fadeIn 0.5s; border-top: 2px dashed #cbd5e1; margin-top: 30px; padding-top: 20px;">
 <h3 style="color: var(--primary-dark);">🌟 CONGRATULATIONS ON COMPLETING THE MISSION!</h3>
 <p style="color:#64748b; margin-bottom: 20px; line-height: 1.6;">
-Notice how the number of new infections drops each week? If we maintain <span class="math-symbol" style="white-space: nowrap;">q < 1</span> forever, the number of new infections will eventually approach 0. This forms an <strong>infinite decreasing geometric sequence (cấp số nhân lùi vô hạn)</strong>.
+Notice how the number of new infected people drops each week? If we maintain <span class="math-symbol" style="white-space: nowrap;">q < 1</span> forever, the number of new infected people will eventually approach 0. This forms an <strong>infinite decreasing geometric sequence (cấp số nhân lùi vô hạn)</strong>.
 </p>
 <div style="background: #ecfdf5; border: 2px solid #10b981; color: #065f46; padding: 25px; border-radius: 12px; text-align: center;">
 When <span class="math-symbol" style="white-space: nowrap;">n</span> is very large, <span class="math-symbol" style="white-space: nowrap;">q<sup>n</sup></span> approaches 0. The formula simplifies to:<br>
@@ -919,23 +919,24 @@ When <span class="math-symbol" style="white-space: nowrap;">n</span> is very lar
 <div class="info-card" style="display: flex; flex-direction: column;">
 <h3 style="margin-top: 0; display: flex; align-items: center; gap: 8px;">📊 Simulate the situation</h3>
 <ol style="line-height: 1.6; padding-left: 20px; color: #334155; flex-grow: 1; margin-bottom: 20px;">
-<li style="margin-bottom: 10px;">Explain why the cases of infection after each outbreak form a geometric sequence?</li>
+<li style="margin-bottom: 10px;">Explain why the number of infected people after each outbreak form a geometric sequence?</li>
 <li style="margin-bottom: 10px;">What is the value for <span class="math-symbol">u<sub>1</sub></span> (the first term) and <span class="math-symbol">q</span> (common ratio)?</li>
 <li style="margin-bottom: 10px;">If no isolation is implemented, after 10 cycles of transmission, will the entire village of 2000 people be infected?</li>
 <li>Based on your experience with past pandemics and what you've just learned from the situation above, what are your thoughts on this new disease threat?</li>
 </ol>
-<button class="btn-danger" style="width: 100%; padding: 12px; font-size: 1.1em;" onclick="submitNipahWorksheet()">SUBMIT</button>
-<div id="nipahSubmitStatus" style="margin-top: 10px; text-align: center; font-style: italic; display: none;"></div>
 </div>
 
 <div class="info-card" style="background: #fafaf9; display: flex; flex-direction: column; justify-content: space-between;">
-<div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+<div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 20px;">
 <label for="worksheetUpload" style="cursor: pointer; text-align: center; width: 80%; padding: 40px 20px; border: 2px dashed #94a3b8; border-radius: 12px; background: white; transition: 0.3s; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
 <div style="font-size: 48px; color: #94a3b8; margin-bottom: 10px;">☁️</div>
 <div style="color: #64748b; font-weight: bold;">Upload your worksheet</div>
 <div id="uploadFileName" style="margin-top: 15px; font-size: 0.9em; color: var(--primary); word-break: break-all;"></div>
 </label>
 <input type="file" id="worksheetUpload" accept="image/*,application/pdf" style="display: none;" onchange="updateFileName(this)">
+
+<button class="btn-primary" onclick="submitNipahWorksheet()" style="margin-top: 15px; width: 80%; padding: 12px; font-size: 1.1em;">📤 UPLOAD & SUBMIT</button>
+<div id="nipahSubmitStatus" class="inline-alert" style="margin-top: 10px; width: 80%; box-sizing: border-box; text-align: center;"></div>
 </div>
 <button class="btn-success" onclick="finishAll()" style="width: 100%; padding: 12px; font-size: 1.1em; display: flex; align-items: center; justify-content: center; gap: 8px;">
 🏆 COMPLETE PROGRAM
@@ -1844,7 +1845,7 @@ function downloadReport() {
   const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = \`PandemicExplorer_Report_${safeName}.html\`;
+  a.download = \`PandemicExplorer_Report_\${safeName}.html\`;
   a.click();
 }
 <\/script>
@@ -1877,26 +1878,34 @@ fileNameDisplay.innerHTML = '';
 
 function submitNipahWorksheet() {
 const fileInput = document.getElementById('worksheetUpload');
-const statusDiv = document.getElementById('nipahSubmitStatus');
+const resDiv = document.getElementById('nipahSubmitStatus');
 
 if (!fileInput.files || fileInput.files.length === 0) {
-alert("Vui lòng tải lên worksheet của bạn trước khi Submit!");
+resDiv.style.display = 'block'; 
+resDiv.className = 'inline-alert alert-error';
+resDiv.style.backgroundColor = '#fee2e2'; 
+resDiv.style.color = '#991b1b';
+resDiv.innerHTML = `❌ Vui lòng tải lên worksheet của bạn trước khi Submit!`;
 return;
 }
 
 const file = fileInput.files[0];
 const reader = new FileReader();
 
-statusDiv.style.display = 'block';
-statusDiv.style.color = '#0284c7';
-statusDiv.innerText = "⏳ Đang gửi file lên hệ thống...";
+resDiv.style.display = 'block'; 
+resDiv.className = 'inline-alert'; 
+resDiv.style.backgroundColor = '#fef3c7'; 
+resDiv.style.color = '#b45309';
+resDiv.innerHTML = `⏳ Processing and uploading file...`;
 
 reader.onload = function(e) {
 const fullDataUrl = e.target.result;
 logAction('Submit Nipah Worksheet', 'Uploaded file', null, fullDataUrl, file.name);
 
-statusDiv.style.color = '#10b981';
-statusDiv.innerText = "✅ Đã nộp thành công!";
+resDiv.className = 'inline-alert alert-success';
+resDiv.style.backgroundColor = '#dcfce7'; 
+resDiv.style.color = '#166534';
+resDiv.innerHTML = `✅ File "<b>${file.name}</b>" submitted successfully!`;
 state.tabsDone.t5 = true;
 document.querySelector('[data-tab="tab5"]').classList.add('completed');
 };
