@@ -812,7 +812,7 @@ When <span class="math-symbol" style="white-space: nowrap;">q > 1</span>, the nu
 <div class="exercise-section" style="border-top: none; margin-top: 0; padding-top: 0;">
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 1: A New Variant Appears (Short Answer)</strong>
+<strong style="white-space: nowrap;">Question 1: A New Variant Appears </strong>
 <p>Assume a new variant appears with <strong>5 initial infected people</strong> in the first cycle (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 5</span>). Because no prevention is taken yet, each infected person spreads the virus to 4 others in the next cycle (Infection rate <span class="math-symbol" style="white-space: nowrap;">q = 4</span>). </p>
 <div style="margin-top: 10px;">
 How many <strong>new infected people</strong> will be recorded exactly in the 5th infection cycle (<span class="math-symbol" style="white-space: nowrap;">u<sub>5</sub></span>)?<br><br>
@@ -821,8 +821,8 @@ How many <strong>new infected people</strong> will be recorded exactly in the 5t
 </div>
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 2: Number of Infected people at Cycle 7 (Multiple Choice)</strong>
-<p>An outbreak starts from <strong>2 "Patient Zeros"</strong> (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 2</span>). The infection rate is <span class="math-symbol" style="white-space: nowrap;">q = 3</span>. Calculate the <strong>number of infected cases exactly at cycle 7 (<span class="math-symbol" style="white-space: nowrap;">u<sub>7</sub></span>)</strong>.</p>
+<strong style="white-space: nowrap;">Question 2</strong> 
+<p>An outbreak starts from <strong>2 "Patient Zeros"</strong> (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 2</span>). The infection rate is <span class="math-symbol" style="white-space: nowrap;">q = 3</span>. Calculate the <strong>number of infected people exactly at cycle 7 (<span class="math-symbol" style="white-space: nowrap;">u<sub>7</sub></span>)</strong>.</p>
 <div style="margin-top: 10px;">
 <label class="radio-option"><input type="radio" name="t3_q2" value="A"> A. 1458</label>
 <label class="radio-option"><input type="radio" name="t3_q2" value="B"> B. 486</label>
@@ -832,7 +832,7 @@ How many <strong>new infected people</strong> will be recorded exactly in the 5t
 </div>
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 3: Total Infected people after Cycle 8 (Short Answer)</strong>
+<strong style="white-space: nowrap;">Question 3</strong> 
 <p>Using the same data from Question 2 (<span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 2</span>, <span class="math-symbol" style="white-space: nowrap;">q = 3</span>). Calculate the <strong>total number of infected people after cycle 8 (<span class="math-symbol" style="white-space: nowrap;">S<sub>8</sub></span>)</strong>.</p>
 <div style="margin-top: 10px;">
 <span class="math-symbol" style="white-space: nowrap;">S<sub>8</sub></span> = <input type="number" class="fill-blank" id="t3_q3" placeholder="Number"> infected people.
@@ -840,7 +840,7 @@ How many <strong>new infected people</strong> will be recorded exactly in the 5t
 </div>
 
 <div class="exercise-item">
-<strong style="white-space: nowrap;">Question 4: Effectiveness of Prevention (Drag and Drop)</strong>
+<strong style="white-space: nowrap;">Question 4: Effectiveness of Prevention </strong>
 <p>Thanks to vaccination and 5K, the infection rate dropped to <strong><span class="math-symbol" style="white-space: nowrap;">q = 0.5</span></strong>. This means the number of new infected people this week is only half of last week's. </p>
 <p>Given that the first week recorded <span class="math-symbol" style="white-space: nowrap;">u<sub>1</sub> = 16000</span> new infected people. Drag the appropriate numbers into the blank boxes to forecast the new infected people for the 8 cycles.</p>
 
@@ -1570,7 +1570,12 @@ const t1_q3 = `Each term is the <b>${sel('q3_1')}</b> of the preceding term and 
 const t1_q4 = `u<sub>n</sub> = u<sub>n-1</sub> <b>${sel('q4_op')} ${val('q4_1')}</b>`;
 const t1_q5 = `Exponent is <b>${sel('q5_1')}</b> by <b>${val('q5_diff')}</b> unit(s). <br> Predict: u<sub>10</sub> = u<sub>1</sub> &times; q<sup>${val('q5_2')}</sup>`;
 const t1_q6_raw = rad('mcq_formula');
-const t1_q6 = t1_q6_raw !== "(Not answered)" ? `Option ${t1_q6_raw} ${t1_q6_raw === 'B' ? '✅ Correct' : '❌'}` : "(Not answered)";
+const t1_q6_labels = {
+  'A': 'A. u<sub>n</sub> = u<sub>1</sub> × q<sup>n</sup>',
+  'B': 'B. u<sub>n</sub> = u<sub>1</sub> × q<sup>n-1</sup>',
+  'C': 'C. u<sub>n</sub> = u<sub>1</sub> × q<sup>n+1</sup>'
+};
+const t1_q6 = t1_q6_raw !== "(Not answered)" ? `Option ${t1_q6_raw}: ${t1_q6_labels[t1_q6_raw] || ''} ${t1_q6_raw === 'B' ? '✅ Correct' : '❌'}` : "(Not answered)";
 
 // --- LẤY DỮ LIỆU TAB 2 ---
 const t2_u1_val = val('t2_u1');
@@ -1588,8 +1593,19 @@ const t2_q5 = `u₁ represents: <b>${sel('t2_q5_u1')}</b> <br> q represents: <b>
 
 const t2_q6 = `S₅ = ${sel('t2_q6_1')}, S₄ = ${sel('t2_q6_2')}, S₃ = ${sel('t2_q6_3')}, S₂ = ${sel('t2_q6_4')}, S₁ = ${sel('t2_q6_5')}`;
 const t2_q7 = `S₅ = ${sel('t2_q7_1')} <br>= ${sel('t2_q7_2')} <br>= ${sel('t2_q7_3')} <br>= ${sel('t2_q7_4')} <br>= ${sel('t2_q7_5')} <br><br> Rewritten: S₅ = ${sel('t2_q7_eq1')} ${sel('t2_q7_eq2')} ${sel('t2_q7_eq3')} ${sel('t2_q7_eq4')} ${sel('t2_q7_eq5')}`;
-const t2_q8 = rad('t2_q8') !== "(Not answered)" ? `Option ${rad('t2_q8')} ${rad('t2_q8') === 'A' ? '✅' : '❌'}` : "(Not answered)";
-const t2_q9 = rad('t2_q9') !== "(Not answered)" ? `Option ${rad('t2_q9')} ${rad('t2_q9') === 'A' ? '✅' : '❌'}` : "(Not answered)";
+const t2_q8_raw = rad('t2_q8');
+const t2_q8_labels = {
+  'A': 'A. S<sub>5</sub>.q = u<sub>1</sub>.q + u<sub>1</sub>.q<sup>2</sup> + u<sub>1</sub>.q<sup>3</sup> + u<sub>1</sub>.q<sup>4</sup> + u<sub>1</sub>.q<sup>5</sup>',
+  'B': 'B. S<sub>5</sub>.q = u<sub>1</sub>.q + (u<sub>1</sub>.q+q) + (u<sub>1</sub>.q<sup>2</sup>+q<sup>2</sup>) + (u<sub>1</sub>.q<sup>3</sup>+q<sup>3</sup>) + (u<sub>1</sub>.q<sup>4</sup>+q<sup>4</sup>)'
+};
+const t2_q8 = t2_q8_raw !== "(Not answered)" ? `Option ${t2_q8_raw}: ${t2_q8_labels[t2_q8_raw] || ''} ${t2_q8_raw === 'A' ? '✅' : '❌'}` : "(Not answered)";
+
+const t2_q9_raw = rad('t2_q9');
+const t2_q9_labels = {
+  'A': 'A. S<sub>5</sub> - S<sub>5</sub>.q = u<sub>1</sub> - u<sub>1</sub>.q<sup>5</sup>',
+  'B': 'B. S<sub>5</sub> - S<sub>5</sub>.q = u<sub>1</sub> - u<sub>1</sub>.q - q - q<sup>2</sup> - q<sup>3</sup> - q<sup>4</sup>'
+};
+const t2_q9 = t2_q9_raw !== "(Not answered)" ? `Option ${t2_q9_raw}: ${t2_q9_labels[t2_q9_raw] || ''} ${t2_q9_raw === 'A' ? '✅' : '❌'}` : "(Not answered)";
 
 const t2_q10_raw = rad('t2_q10');
 let t2_q10_cond = t2_q10_raw === 'q_neq_0' ? 'q &ne; 0' : (t2_q10_raw === 'q_neq_1' ? 'q &ne; 1' : '(Not answered)');
@@ -1600,7 +1616,13 @@ const q1_val = val('t3_q1');
 const q1_res = q1_val === '1280' ? '✅ Correct' : '❌ (Correct answer: 1280)';
 
 const mcq2 = rad('t3_q2');
-const q2_val = mcq2 !== "(Not answered)" ? `Option ${mcq2}` + (mcq2 === 'A' ? ' — 1458 ✅' : ' ❌') : "(Not answered)";
+const t3_q2_labels = {
+  'A': 'A. 1458',
+  'B': 'B. 486',
+  'C': 'C. 728',
+  'D': 'D. 726'
+};
+const q2_val = mcq2 !== "(Not answered)" ? `Option ${mcq2}: ${t3_q2_labels[mcq2] || ''} ${mcq2 === 'A' ? '✅' : '❌'}` : "(Not answered)";
 
 const q3_val = val('t3_q3');
 const q3_res = q3_val === '6560' ? '✅ Correct' : '❌ (Correct answer: 6560)';
@@ -1790,7 +1812,7 @@ const reportHTML = `<!DOCTYPE html>
     </div>
     <div class="q-block">
       <span class="q-title">Question 2: Number of Infections at Cycle 7 (Multiple Choice)</span>
-      <p class="question-text">An outbreak starts from 2 "Patient Zeros" (<span class="math-symbol">u₁ = 2</span>). The infection rate is <span class="math-symbol">q = 3</span>. Calculate the number of infected cases exactly at cycle 7 (u₇).</p>
+      <p class="question-text">An outbreak starts from 2 "patient zeros" (<span class="math-symbol">u₁ = 2</span>). The infection rate is <span class="math-symbol">q = 3</span>. Calculate the number of infected cases exactly at cycle 7 (u₇).</p>
       <div class="answer">Student's answer: <b>${q2_val}</b></div>
     </div>
     <div class="q-block">
